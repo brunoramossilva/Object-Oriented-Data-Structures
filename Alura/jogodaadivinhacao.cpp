@@ -15,7 +15,8 @@ int main () {
     cout << "O número secreto é " << numero_secreto << ". Não conte para ninguém!" << endl;
 
     int chute;
+    cout << "Digite o valor do seu chute: ";
     cin >>  chute;
-    cout <<"O valor do seu chute é "<< chute << endl;
+    cout <<"O valor do seu chute é "<< chute <<"."<< endl;
 
 }
