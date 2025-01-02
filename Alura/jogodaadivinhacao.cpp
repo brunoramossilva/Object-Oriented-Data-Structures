@@ -17,14 +17,17 @@ int main () {
 
     int tentativas = 0;
 
+
     while (nao_acertou)
     {
         tentativas++;
         cout << "Tentativa Nº " << tentativas << endl;
+
         int chute;
+
         cout << "Digite o valor do seu chute: ";
         cin >>  chute;
-         cout <<"Valor do seu chute: "<< chute <<"."<< endl;
+        cout <<"Valor do seu chute: "<< chute <<"."<< endl;
 
         bool acertou = chute == NUMERO_SECRETO;
         bool maior = chute > NUMERO_SECRETO;
@@ -34,13 +37,12 @@ int main () {
         cout << "Parabéns! Você acertou o número secreto na " << tentativas << "° tentativa." << endl;
         nao_acertou = false;
         }
+
         else if (maior)
         {
         cout << "O valor do seu chute é maior do que o valor do número secreto." << endl;
         }
         else { cout << "O valor do seu chute é menor do que o valor do número secreto." <<endl;}   
-
-
     }
 
     cout << "Fim do Jogo!" << endl;
