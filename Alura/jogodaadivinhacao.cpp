@@ -21,7 +21,7 @@ int main () {
     while (nao_acertou)
     {
         tentativas++;
-        cout << "Tentativa Nº " << tentativas << endl;
+        cout << "Tentativa Nº " << tentativas << "." << endl;
 
         int chute;
 
