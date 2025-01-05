@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include <cstdlib>
+#include <ctime>
 #include <locale.h>
 
 using namespace std;
@@ -9,18 +11,19 @@ int main () {
     setlocale(LC_ALL, "Portuguese");
 
     cout << " " << endl;
-
     cout << "*************************************" << endl;
     cout << "* Bem-vindo(a) ao jogo da adivinhação! *" << endl;
     cout << "*************************************" << endl;
-
     cout << " " << endl;
+
 
     cout << "Digite o seu nome para iniciarmos o jogo: ";
     string nome;
     cin >> nome;
 
+
     cout << " " << endl;
+
 
     cout << "Olá, "<< nome << ". Em qual dificuldade você deseja jogar?" << endl;
     cout << "Defina a dificuldade digitando a letra correspondente que está dentro dos parênteses:" << endl;
@@ -28,7 +31,6 @@ int main () {
 
     char dificuldade;
     cin >> dificuldade;
-
     string dificuldade_escolhida;
 
     int numero_de_tentativas;
@@ -37,28 +39,34 @@ int main () {
         numero_de_tentativas = 12;
         dificuldade_escolhida = "fácil";
     }
+
         else if(dificuldade == 'M' || dificuldade == 'm'){
             numero_de_tentativas = 10;
             dificuldade_escolhida = "médio";
         }
+
         else if (dificuldade == 'D' || dificuldade == 'd') {
             numero_de_tentativas = 8;
             dificuldade_escolhida = "difícil";
         }
+
         else {
         cout << "Dificuldade Inválida!" << endl;
         return 1;
         }
 
+
     cout << "O nível de dificuldade escolhido foi o " << dificuldade_escolhida << ". Boa sorte!" << endl;
 
-    const int NUMERO_SECRETO = 1;
+    srand(time(NULL));
+    const int NUMERO_SECRETO = rand() % 100;
 
     bool nao_acertou = true;
 
     int tentativas = 0;
 
     double pontos = 1000;
+
 
     for (tentativas = 1; tentativas <= numero_de_tentativas; tentativas++)
     {
@@ -87,14 +95,17 @@ int main () {
         {
         cout << "O valor do seu chute é maior do que o valor do número secreto." << endl;
         }
+
         else { cout << "O valor do seu chute é menor do que o valor do número secreto." <<endl;}   
     }
+
 
     cout << "Fim do Jogo!" << endl;
 
     if (nao_acertou){
         cout << "Você perdeu! Tente novamente." <<endl;
     }
+
     else {
     cout.precision(2);
     cout << fixed;
