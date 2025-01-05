@@ -109,6 +109,7 @@ int main () {
 
     if (nao_acertou){
         cout << "Você perdeu! Tente novamente." <<endl;
+        cout << "O valor do número secreto era " << NUMERO_SECRETO << "." << endl;
     }
 
     else {
