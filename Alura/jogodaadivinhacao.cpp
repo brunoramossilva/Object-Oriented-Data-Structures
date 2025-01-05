@@ -11,6 +11,28 @@ int main () {
     cout << "* Bem-vindo(a) ao jogo da adivinhação! *" << endl;
     cout << "*************************************" << endl;
 
+    cout << "Em qual dificuldade você deseja jogar?" << endl;
+    cout << 'Defina a dificuldade digitando a letra correspondente que está dentro dos parênteses "( )":' << endl << " Fácil (F) | Médio (M) | Difícil (D)" << endl;
+
+    char dificuldade;
+    cin >> dificuldade;
+
+    int numero_de_tentativas;
+
+    if (dificuldade == 'F'){
+        numero_de_tentativas == 12;
+    }
+        else if(dificuldade == 'M'){
+            numero_de_tentativas == 10;
+        }
+        else if (dificuldade == 'D'){
+            numero_de_tentativas == 8;
+        }
+        else{
+        cout << "Dificuldade Inválida!" << endl;
+        }
+        
+
     const int NUMERO_SECRETO = 48;
 
     bool nao_acertou = true;
