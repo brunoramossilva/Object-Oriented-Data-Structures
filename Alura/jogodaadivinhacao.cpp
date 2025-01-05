@@ -11,7 +11,7 @@ int main () {
     cout << "* Bem-vindo(a) ao jogo da adivinhação! *" << endl;
     cout << "*************************************" << endl;
 
-    const int NUMERO_SECRETO = 25;
+    const int NUMERO_SECRETO = 48;
 
     bool nao_acertou = true;
 
@@ -51,6 +51,7 @@ int main () {
 
     cout << "Fim do Jogo!" << endl;
     cout.precision(2);
+    cout << fixed;
     cout << "Pontuação Final: " << pontos << " Pontos."  << endl;
 
 }
