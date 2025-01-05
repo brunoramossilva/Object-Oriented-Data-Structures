@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <locale.h>
 
 using namespace std;
@@ -12,28 +13,36 @@ int main () {
     cout << "*************************************" << endl;
 
     cout << "Em qual dificuldade você deseja jogar?" << endl;
-    cout << 'Defina a dificuldade digitando a letra correspondente que está dentro dos parênteses "( )":' << endl << " Fácil (F) | Médio (M) | Difícil (D)" << endl;
+    cout << "Defina a dificuldade digitando a letra correspondente que está dentro dos parênteses:" << endl;
+    cout << "Fácil (F) | Média (M) | Difícil (D)" << endl;
 
     char dificuldade;
     cin >> dificuldade;
 
+    string dificuldade_escolhida;
+
     int numero_de_tentativas;
 
-    if (dificuldade == 'F'){
-        numero_de_tentativas == 12;
+    if (dificuldade == 'F' || dificuldade == 'f'){
+        numero_de_tentativas = 12;
+        dificuldade_escolhida = "Fácil";
     }
-        else if(dificuldade == 'M'){
-            numero_de_tentativas == 10;
+        else if(dificuldade == 'M' || dificuldade == 'm'){
+            numero_de_tentativas = 10;
+            dificuldade_escolhida = "Média";
         }
-        else if (dificuldade == 'D'){
-            numero_de_tentativas == 8;
+        else if (dificuldade == 'D' || dificuldade == 'd') {
+            numero_de_tentativas = 8;
+            dificuldade_escolhida = "Difícil";
         }
-        else{
+        else {
         cout << "Dificuldade Inválida!" << endl;
+        return 1;
         }
-        
 
-    const int NUMERO_SECRETO = 48;
+    cout << "Você selecionou a dificuldade " << dificuldade_escolhida << ". Boa sorte!" << endl;
+
+    const int NUMERO_SECRETO = 1;
 
     bool nao_acertou = true;
 
@@ -41,9 +50,8 @@ int main () {
 
     double pontos = 1000;
 
-    while (nao_acertou)
+    for (tentativas = 1; tentativas <= numero_de_tentativas; tentativas++)
     {
-        tentativas++;
         cout << "Tentativa Nº " << tentativas << "." << endl;
 
         int chute;
