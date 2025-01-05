@@ -8,13 +8,23 @@ int main () {
 
     setlocale(LC_ALL, "Portuguese");
 
+    cout << " " << endl;
+
     cout << "*************************************" << endl;
     cout << "* Bem-vindo(a) ao jogo da adivinhação! *" << endl;
     cout << "*************************************" << endl;
 
-    cout << "Em qual dificuldade você deseja jogar?" << endl;
+    cout << " " << endl;
+
+    cout << "Digite o seu nome para iniciarmos o jogo: ";
+    string nome;
+    cin >> nome;
+
+    cout << " " << endl;
+
+    cout << "Olá, "<< nome << ". Em qual dificuldade você deseja jogar?" << endl;
     cout << "Defina a dificuldade digitando a letra correspondente que está dentro dos parênteses:" << endl;
-    cout << "Fácil (F) | Média (M) | Difícil (D)" << endl;
+    cout << "Fácil (F) | Média (M) | Difícil (D) " << endl;
 
     char dificuldade;
     cin >> dificuldade;
@@ -25,22 +35,22 @@ int main () {
 
     if (dificuldade == 'F' || dificuldade == 'f'){
         numero_de_tentativas = 12;
-        dificuldade_escolhida = "Fácil";
+        dificuldade_escolhida = "fácil";
     }
         else if(dificuldade == 'M' || dificuldade == 'm'){
             numero_de_tentativas = 10;
-            dificuldade_escolhida = "Média";
+            dificuldade_escolhida = "médio";
         }
         else if (dificuldade == 'D' || dificuldade == 'd') {
             numero_de_tentativas = 8;
-            dificuldade_escolhida = "Difícil";
+            dificuldade_escolhida = "difícil";
         }
         else {
         cout << "Dificuldade Inválida!" << endl;
         return 1;
         }
 
-    cout << "Você selecionou a dificuldade " << dificuldade_escolhida << ". Boa sorte!" << endl;
+    cout << "O nível de dificuldade escolhido foi o " << dificuldade_escolhida << ". Boa sorte!" << endl;
 
     const int NUMERO_SECRETO = 1;
 
@@ -70,6 +80,7 @@ int main () {
         {
         cout << "Parabéns! Você acertou o número secreto na " << tentativas << "° tentativa." << endl;
         nao_acertou = false;
+        break;
         }
 
         else if (maior)
