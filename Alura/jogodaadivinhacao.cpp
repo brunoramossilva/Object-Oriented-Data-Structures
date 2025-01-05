@@ -30,7 +30,7 @@ int main () {
         cin >>  chute;
         cout <<"Valor do seu chute: "<< chute <<"."<< endl;
 
-        double pontos_perdidos = abs((chute - NUMERO_SECRETO) / 2);
+        double pontos_perdidos = abs((chute - NUMERO_SECRETO)) / 2.0;
         pontos = pontos - pontos_perdidos;
 
         bool acertou = chute == NUMERO_SECRETO;
