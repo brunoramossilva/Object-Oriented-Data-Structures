@@ -70,6 +70,7 @@ int main () {
 
     for (tentativas = 1; tentativas <= numero_de_tentativas; tentativas++)
     {
+        cout << " " << endl;
         cout << "Tentativa Nº " << tentativas << "." << endl;
 
         int chute;
@@ -93,15 +94,11 @@ int main () {
 
         else if (maior)
         {
-        cout << " " << endl;
         cout << "O valor do seu chute é maior do que o valor do número secreto." << endl;
-        cout << " " << endl;
         }
 
         else { 
-        cout << " " << endl;
         cout << "O valor do seu chute é menor do que o valor do número secreto." <<endl;}
-        cout << " " << endl;
     }
 
 
