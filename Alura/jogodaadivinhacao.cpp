@@ -94,11 +94,13 @@ int main () {
 
         else if (maior)
         {
-        cout << "O valor do seu chute é maior do que o valor do número secreto." << endl;
+        cout << " " << endl;
+        cout << "* O valor do seu chute é maior do que o valor do número secreto. *" << endl;
         }
 
-        else { 
-        cout << "O valor do seu chute é menor do que o valor do número secreto." <<endl;}
+        else {
+        cout << " " << endl;     
+        cout << "* O valor do seu chute é menor do que o valor do número secreto. *" <<endl;}
     }
 
 
