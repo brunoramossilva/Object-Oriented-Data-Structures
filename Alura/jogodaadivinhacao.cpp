@@ -50,6 +50,7 @@ int main () {
     }
 
     cout << "Fim do Jogo!" << endl;
+    cout.precision(2);
     cout << "Pontuação Final: " << pontos << " Pontos."  << endl;
 
 }
