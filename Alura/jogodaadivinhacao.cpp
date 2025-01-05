@@ -36,17 +36,17 @@ int main () {
     int numero_de_tentativas;
 
     if (dificuldade == 'F' || dificuldade == 'f'){
-        numero_de_tentativas = 12;
+        numero_de_tentativas = 10;
         dificuldade_escolhida = "fácil";
     }
 
         else if(dificuldade == 'M' || dificuldade == 'm'){
-            numero_de_tentativas = 10;
+            numero_de_tentativas = 8;
             dificuldade_escolhida = "médio";
         }
 
         else if (dificuldade == 'D' || dificuldade == 'd') {
-            numero_de_tentativas = 8;
+            numero_de_tentativas = 6;
             dificuldade_escolhida = "difícil";
         }
 
@@ -77,7 +77,7 @@ int main () {
 
         cout << "Digite o valor do seu chute: ";
         cin >>  chute;
-        
+
         cout <<"Valor do seu chute: "<< chute <<"."<< endl;
 
         double pontos_perdidos = abs((chute - NUMERO_SECRETO)) / 2.0;
