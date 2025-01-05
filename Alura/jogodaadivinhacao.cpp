@@ -80,8 +80,14 @@ int main () {
     }
 
     cout << "Fim do Jogo!" << endl;
+
+    if (nao_acertou){
+        cout << "Você perdeu! Tente novamente." <<endl;
+    }
+    else {
     cout.precision(2);
     cout << fixed;
     cout << "Pontuação Final: " << pontos << " Pontos."  << endl;
+    }
 
 }
