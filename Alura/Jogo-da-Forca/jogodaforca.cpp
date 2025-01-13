@@ -1,9 +1,11 @@
 #include <iostream>
 #include <string>
+#include <map>
 #include <locale.h>
 using namespace std;
 
 const string PALAVRA_SECRETA = "MELANCIA";
+map<char, bool> chutou;
 
 bool letra_existe(char chute){
     // for(int i = 0; i < PALAVRA_SECRETA.size(); i++ ){
@@ -12,7 +14,7 @@ bool letra_existe(char chute){
         //}
 
         for (char letra : PALAVRA_SECRETA){
-            if(chute == letra){
+            if (chute == letra){
                 return true;
             }
 
@@ -33,9 +35,23 @@ int main(){
     bool nao_enforcou = true;
 
     while (nao_acertou && nao_enforcou){
+        for (char letra : PALAVRA_SECRETA){
+            if (chutou[letra]){
+                cout << letra << " ";
+            }
+            else {
+                cout << "_ ";
+
+            }
+
+        }
+        cout << endl;
+
 
         char chute;
         cin >> chute;
+
+        chutou[chute] = true;
 
         cout << "O seu chute foi: " << chute << endl;
 
