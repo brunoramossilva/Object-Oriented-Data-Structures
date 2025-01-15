@@ -7,7 +7,7 @@
 
 using namespace std;
 
-const string PALAVRA_SECRETA = "MELANCIA";
+const string PALAVRA_SECRETA = "PNEUMOULTRAMICROSCOPICOSSILICOVULCANOCONIOTICO";
 
 map <char, bool> chutou;
 vector <char> chutes_errados;
