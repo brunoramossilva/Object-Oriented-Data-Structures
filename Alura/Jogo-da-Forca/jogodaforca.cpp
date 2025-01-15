@@ -29,6 +29,12 @@ bool letra_existe(char chute){
 
 int main(){
 
+    cout << endl;
+    cout << "**********************************" << endl;
+    cout << "# Bem-Vindo(a) ao Jogo da Forca! #" << endl;
+    cout << "**********************************" << endl;
+    cout << endl;
+
     setlocale(LC_ALL, "Portuguese");
 
 
@@ -46,7 +52,7 @@ int main(){
         }
         cout << endl;
 
-
+        cout << "Digite o seu chute: ";
         char chute;
         cin >> chute;
         chute = toupper(chute);
@@ -61,5 +67,7 @@ int main(){
         else{
             cout << "A letra chutada não existe na palavra." << endl;
         }
+        
+        cout << endl;
     }
 }
