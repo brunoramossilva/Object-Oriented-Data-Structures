@@ -32,9 +32,9 @@ bool letra_existe(char chute){
 int main(){
 
     cout << endl;
-    cout << "**********************************" << endl;
-    cout << "# Bem-Vindo(a) ao Jogo da Forca! #" << endl;
-    cout << "**********************************" << endl;
+    cout << "******************************************************" << endl;
+    cout << "*-*-*-*-*-* Bem-Vindo(a) ao Jogo da Forca! -*-*-*-*-*-" << endl;
+    cout << "******************************************************" << endl;
     cout << endl;
 
     setlocale(LC_ALL, "Portuguese");
@@ -45,13 +45,13 @@ int main(){
 
     while (nao_acertou && nao_enforcou){
 
-        cout << "**********************************" << endl;
-        cout << "*-*-*-*-* Chutes errados -*-*-*-*-" << endl;
+        cout << "********************************************" << endl;
+        cout << "-*-*-*-*-*-*-* Chutes errados -*-*-*-*-*-*-*" << endl;
         for (char letra : chutes_errados){
             cout << " " << letra << " |";
         }
         cout << endl;
-        cout << "**********************************" << endl;
+        cout << "********************************************" << endl;
         cout << endl;
 
         for (char letra : PALAVRA_SECRETA){
@@ -80,7 +80,6 @@ int main(){
             cout << "A letra chutada não existe na palavra." << endl;
             chutes_errados.push_back(chute);
         }
-
         cout << endl;
     }
 }
