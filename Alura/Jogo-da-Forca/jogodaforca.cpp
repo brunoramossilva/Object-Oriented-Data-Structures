@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <map>
+#include <vector>
 #include <cctype>
 #include <locale.h>
 
@@ -8,7 +9,8 @@ using namespace std;
 
 const string PALAVRA_SECRETA = "MELANCIA";
 
-map<char, bool> chutou;
+map <char, bool> chutou;
+vector <char> chutes_errados;
 
 bool letra_existe(char chute){
 
@@ -42,6 +44,16 @@ int main(){
     bool nao_enforcou = true;
 
     while (nao_acertou && nao_enforcou){
+
+        cout << "**********************************" << endl;
+        cout << "*-*-*-*-* Chutes errados -*-*-*-*-" << endl;
+        for (char letra : chutes_errados){
+            cout << " " << letra << " |";
+        }
+        cout << endl;
+        cout << "**********************************" << endl;
+        cout << endl;
+
         for (char letra : PALAVRA_SECRETA){
             if (chutou[letra]){
                 cout << letra << " ";
@@ -66,8 +78,9 @@ int main(){
         }
         else{
             cout << "A letra chutada não existe na palavra." << endl;
+            chutes_errados.push_back(chute);
         }
-        
+
         cout << endl;
     }
 }
