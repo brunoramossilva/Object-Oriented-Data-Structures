@@ -113,9 +113,22 @@ void recebimento_dos_chutes(){
 
 }
 
-void le_arquivo(){
+vector <string> le_arquivo(){
+
     ifstream arquivo;
     arquivo.open("palavras.txt");
+
+    int quantidade_de_palavras;
+    arquivo >> quantidade_de_palavras;
+
+    cout << "O arquivo possui " << quantidade_de_palavras << " palavras." << endl;
+
+    for (int i = 1; i < quantidade_de_palavras + 1 ; i++){
+        string palava_lida;
+        arquivo >> palava_lida;
+
+        cout << i <<". " << palava_lida << ";" << endl;
+    }
 
 }
 
