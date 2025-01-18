@@ -162,7 +162,6 @@ void sorteia_palavra(){
     if (resposta == 'S'){
     cout << endl;
     cout << "* Modo Desenvolvedor *\nA palavra secreta é: " << palavra_secreta << ".\n";
-    cout << endl;
     }
 
 }
