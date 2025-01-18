@@ -115,7 +115,8 @@ void recebimento_dos_chutes(){
 
 }
 
-vector <string> le_arquivo(){
+// Função responsável por ler o arquivo de texto:
+vector<string> le_arquivo(){
 
     ifstream arquivo;
     arquivo.open("palavras.txt");
@@ -131,9 +132,11 @@ vector <string> le_arquivo(){
 
         palavras_do_arquivo.push_back(palava_lida);
     }
+    arquivo.close();
     return palavras_do_arquivo;
 }
 
+// Função responsável por sortear a palavra secreta a partir do arquivo de texto e setar a palavra na variável da palavra secreta:
 void sorteia_palavra(){
     vector<string> palavras = le_arquivo();
 
@@ -143,7 +146,7 @@ void sorteia_palavra(){
     palavra_secreta = palavras[indice_sorteado];
 }
 
-// main do código:
+// Main do código:
 int main(){
 
     imprime_cabecalho();
