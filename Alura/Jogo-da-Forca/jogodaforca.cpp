@@ -3,6 +3,7 @@
 #include <map>
 #include <vector>
 #include <cctype>
+#include <fstream>
 #include <locale.h>
 
 using namespace std;
@@ -112,11 +113,18 @@ void recebimento_dos_chutes(){
 
 }
 
+void le_arquivo(){
+    ifstream arquivo;
+    arquivo.open("palavras.txt");
+
+}
 
 // main do código:
 int main(){
 
     imprime_cabecalho();
+
+    le_arquivo();
 
     setlocale(LC_ALL, "Portuguese");
 
