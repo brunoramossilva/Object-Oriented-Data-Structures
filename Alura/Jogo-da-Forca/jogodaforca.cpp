@@ -68,7 +68,7 @@ void verificacao_de_chutes_errados(){
     cout << "******************************************************" << endl;
     cout << "-*-*-*-*-*-*-*-*-* Chutes Errados -*-*-*-*-*-*-*-*-*-*" << endl;
     for (char letra : chutes_errados){
-        cout << " " << letra << " |";
+        cout << "      | " << letra << " |";
     }
     cout << endl;
     cout << "******************************************************" << endl;
