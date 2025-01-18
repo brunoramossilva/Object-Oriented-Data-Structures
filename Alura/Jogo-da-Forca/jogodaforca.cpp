@@ -64,6 +64,7 @@ void imprime_cabecalho(){
 // Função responsável por imprimir os chutes errados:
 void verificacao_de_chutes_errados(){
 
+    cout << endl;
     cout << "******************************************************" << endl;
     cout << "-*-*-*-*-*-*-*-*-* Chutes Errados -*-*-*-*-*-*-*-*-*-*" << endl;
     for (char letra : chutes_errados){
