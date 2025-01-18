@@ -13,7 +13,6 @@ using namespace std;
 // Seta a palavra secreta:
 string palavra_secreta;
 
-
 // Verifica se a letra foi chutada e a converte para um valor booleano:
 map <char, bool> chutou;
 
@@ -32,7 +31,6 @@ bool letra_existe(char chute){
             if (chute == letra){
                 return true;
             }
-
         }
         return false;
     }
@@ -147,6 +145,7 @@ vector<string> le_arquivo(){
 // Função responsável por sortear a palavra secreta a partir do arquivo de texto e setar a palavra na variável da palavra secreta;
 // Além disso, a função também pergunta se o usuário deseja acessar o modo desenvolvedor:
 void sorteia_palavra(){
+
     vector<string> palavras = le_arquivo();
 
     srand(time(NULL));
@@ -164,6 +163,7 @@ void sorteia_palavra(){
     cout << "* Modo Desenvolvedor *\nA palavra secreta é: " << palavra_secreta << ".\n";
     cout << endl;
     }
+
 }
 
 // Função responsável por atualizar a lista de palavras:
@@ -186,6 +186,7 @@ void salva_arquivo(vector<string> nova_lista_de_palavras){
         cout << "Não foi possível acessar o banco de dados.\nContate o administrador do seu sistema." << endl ;
         exit(0);
     }
+
 }
 
 // Função responsável por adicionar a nova palavra na lista, caso o jogador vença o jogo:
@@ -199,30 +200,25 @@ void adiciona_palavra(){
         c = toupper(c);
     }
 
-
     vector<string> lista_de_palavras = le_arquivo();
     lista_de_palavras.push_back(nova_palavra);
 
     salva_arquivo(lista_de_palavras);
+
 }
 
 // Main do código:
 int main(){
 
     setlocale(LC_ALL, "Portuguese");
-
     imprime_cabecalho();
-
     le_arquivo();
-
     sorteia_palavra();
 
     while (nao_acertou() && nao_enforcou()){
 
         verificacao_de_chutes_errados();
-
         impressao_da_palavra();
-
         recebimento_dos_chutes();
         
     }
@@ -232,10 +228,13 @@ int main(){
 
     // Verifica se a pessoa venceu ou perdeu e imprime as mensagens respectivas:
     if (nao_acertou()){
+
         cout << "Você perdeu! Tente novamente." << endl;
         cout << "A palavra secreta era: " << palavra_secreta << "." << endl;
     }
+
     else {
+        
         cout << "Parabéns, você venceu!" << endl;
         cout << "A palavra secreta era: " << palavra_secreta << "." << endl;
         cout << "Seu prêmio é a oportunidade de adicionar uma nova palavra ao banco de dados.\nDeseja fazer? Responda com 'S' para sim ou 'N' para não: ";
@@ -246,6 +245,9 @@ int main(){
         if (resposta == 'S' || resposta == 's'){
             adiciona_palavra();
         }
+
     }
+
     cout << "Obrigado por jogar! Até a próxima.";
+
 }
