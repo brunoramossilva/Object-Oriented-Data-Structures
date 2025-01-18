@@ -7,7 +7,7 @@
 
 using namespace std;
 
-const string PALAVRA_SECRETA = "PNEUMOULTRAMICROSCOPICOSSILICOVULCANOCONIOTICO";
+const string PALAVRA_SECRETA = "MELANCIA";
 
 map <char, bool> chutou;
 vector <char> chutes_errados;
@@ -28,22 +28,31 @@ bool letra_existe(char chute){
         return false;
     }
 
+bool nao_acertou(){
+    for (char letra : PALAVRA_SECRETA){
+        if (!chutou[letra]){
+            return true;
+        }
+    }
+    return false;
+}
+
+bool nao_enforcou(){
+    return chutes_errados.size() < 5;
+}
 
 int main(){
 
     cout << endl;
     cout << "******************************************************" << endl;
-    cout << "*-*-*-*-*-* Bem-Vindo(a) ao Jogo da Forca! -*-*-*-*-*-" << endl;
+    cout << "*-*-*-*-*-* Bem-Vindo(a) ao Jogo da Forca -*-*-*-*-*-" << endl;
     cout << "******************************************************" << endl;
     cout << endl;
 
     setlocale(LC_ALL, "Portuguese");
 
 
-    bool nao_acertou = true;
-    bool nao_enforcou = true;
-
-    while (nao_acertou && nao_enforcou){
+    while (nao_acertou() && nao_enforcou()){
 
         cout << "******************************************************" << endl;
         cout << "-*-*-*-*-*-*-*-*-* Chutes Errados -*-*-*-*-*-*-*-*-*-*" << endl;
