@@ -145,8 +145,8 @@ vector<string> le_arquivo(){
 
 }
 
-// Função responsável por sortear a palavra secreta a partir do arquivo de texto e setar a palavra na variável da palavra secreta;
-// Além disso, a função também pergunta se o usuário deseja acessar o modo desenvolvedor:
+/* Função responsável por sortear a palavra secreta a partir do arquivo de texto e setar a palavra na variável da palavra secreta.
+Além disso, a função também pergunta se o usuário deseja acessar o modo desenvolvedor: */
 void sorteia_palavra(){
 
     vector<string> palavras = le_arquivo();
