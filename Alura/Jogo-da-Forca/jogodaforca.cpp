@@ -190,9 +190,15 @@ void salva_arquivo(vector<string> nova_lista_de_palavras){
 
 // Função responsável por adicionar a nova palavra na lista, caso o jogador vença o jogo:
 void adiciona_palavra(){
-    cout << "Digite a nova palavra utilizando letras maiúsculas: ";
+    cout << "Digite a nova palavra: ";
     string nova_palavra;
     cin >> nova_palavra;
+
+    // Transforma a nova palavra para caixa alta, caso o usuário a tenha digitado utilizando letras minúsculas:
+    for (char &c : nova_palavra){
+        c = toupper(c);
+    }
+
 
     vector<string> lista_de_palavras = le_arquivo();
     lista_de_palavras.push_back(nova_palavra);
