@@ -121,19 +121,27 @@ vector<string> le_arquivo(){
     ifstream arquivo;
     arquivo.open("palavras.txt");
 
-    int quantidade_de_palavras;
-    arquivo >> quantidade_de_palavras;
+    if(arquivo.is_open()){
 
-    vector <string> palavras_do_arquivo;
+        int quantidade_de_palavras;
+        arquivo >> quantidade_de_palavras;
 
-    for (int i = 1; i < quantidade_de_palavras + 1 ; i++){
-        string palava_lida;
-        arquivo >> palava_lida;
+        vector <string> palavras_do_arquivo;
 
-        palavras_do_arquivo.push_back(palava_lida);
+        for (int i = 1; i < quantidade_de_palavras + 1 ; i++){
+            string palava_lida;
+            arquivo >> palava_lida;
+
+            palavras_do_arquivo.push_back(palava_lida);
+        }
+        arquivo.close();
+        return palavras_do_arquivo;
     }
-    arquivo.close();
-    return palavras_do_arquivo;
+    else{
+        cout << "Não foi possível acessar o banco de dados.\nContate o administrador do seu sistema." << endl ;
+        exit(0);
+    }
+
 }
 
 // Função responsável por sortear a palavra secreta a partir do arquivo de texto e setar a palavra na variável da palavra secreta:
@@ -149,13 +157,13 @@ void sorteia_palavra(){
 // Main do código:
 int main(){
 
+    setlocale(LC_ALL, "Portuguese");
+
     imprime_cabecalho();
 
     le_arquivo();
 
     sorteia_palavra();
-
-    setlocale(LC_ALL, "Portuguese");
 
     while (nao_acertou() && nao_enforcou()){
 
