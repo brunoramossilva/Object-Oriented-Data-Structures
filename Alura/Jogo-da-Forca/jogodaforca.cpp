@@ -45,13 +45,13 @@ int main(){
 
     while (nao_acertou && nao_enforcou){
 
-        cout << "********************************************" << endl;
-        cout << "-*-*-*-*-*-*-* Chutes errados -*-*-*-*-*-*-*" << endl;
+        cout << "******************************************************" << endl;
+        cout << "-*-*-*-*-*-*-*-*-* Chutes Errados -*-*-*-*-*-*-*-*-*-*" << endl;
         for (char letra : chutes_errados){
             cout << " " << letra << " |";
         }
         cout << endl;
-        cout << "********************************************" << endl;
+        cout << "******************************************************" << endl;
         cout << endl;
 
         for (char letra : PALAVRA_SECRETA){
