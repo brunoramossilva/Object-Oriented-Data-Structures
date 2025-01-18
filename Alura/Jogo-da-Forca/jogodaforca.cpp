@@ -144,7 +144,8 @@ vector<string> le_arquivo(){
 
 }
 
-// Função responsável por sortear a palavra secreta a partir do arquivo de texto e setar a palavra na variável da palavra secreta:
+// Função responsável por sortear a palavra secreta a partir do arquivo de texto e setar a palavra na variável da palavra secreta;
+// Além disso, a função também pergunta se o usuário deseja acessar o modo desenvolvedor:
 void sorteia_palavra(){
     vector<string> palavras = le_arquivo();
 
@@ -152,6 +153,51 @@ void sorteia_palavra(){
     int indice_sorteado = rand() % palavras.size();
 
     palavra_secreta = palavras[indice_sorteado];
+
+    cout << "Deseja acessar o modo desenvolvedor?\nDigite 'S' para sim ou 'N' para não: ";
+    char resposta;
+    cin >> resposta;
+    resposta = toupper(resposta);
+
+    if (resposta == 'S'){
+    cout << endl;
+    cout << "* Modo Desenvolvedor *\nA palavra secreta é: " << palavra_secreta << ".\n";
+    cout << endl;
+    }
+}
+
+// Função responsável por atualizar a lista de palavras:
+void salva_arquivo(vector<string> nova_lista_de_palavras){
+
+    ofstream arquivo;
+    arquivo.open("palavras.txt");
+
+    if (arquivo.is_open()){
+
+        arquivo << nova_lista_de_palavras.size() << endl;
+        for (string palavra : nova_lista_de_palavras){
+            arquivo << palavra << endl;
+
+        }
+        arquivo.close();
+        cout << "Palavra adicionada com sucesso!" << endl;
+    }
+    else{
+        cout << "Não foi possível acessar o banco de dados.\nContate o administrador do seu sistema." << endl ;
+        exit(0);
+    }
+}
+
+// Função responsável por adicionar a nova palavra na lista, caso o jogador vença o jogo:
+void adiciona_palavra(){
+    cout << "Digite a nova palavra utilizando letras maiúsculas: ";
+    string nova_palavra;
+    cin >> nova_palavra;
+
+    vector<string> lista_de_palavras = le_arquivo();
+    lista_de_palavras.push_back(nova_palavra);
+
+    salva_arquivo(lista_de_palavras);
 }
 
 // Main do código:
@@ -181,11 +227,19 @@ int main(){
     // Verifica se a pessoa venceu ou perdeu e imprime as mensagens respectivas:
     if (nao_acertou()){
         cout << "Você perdeu! Tente novamente." << endl;
+        cout << "A palavra secreta era: " << palavra_secreta << "." << endl;
     }
     else {
         cout << "Parabéns, você venceu!" << endl;
-    }
+        cout << "A palavra secreta era: " << palavra_secreta << "." << endl;
+        cout << "Seu prêmio é a oportunidade de adicionar uma nova palavra ao banco de dados.\nDeseja fazer? Responda com 'S' para sim ou 'N' para não: ";
 
-    cout << "A palavra secreta era: " << palavra_secreta << "." << endl;
+        char resposta;
+        cin >> resposta;
 
+        if (resposta == 'S' || resposta == 's'){
+            adiciona_palavra();
+        }
     }
+    cout << "Obrigado por jogar! Até a próxima.";
+}
