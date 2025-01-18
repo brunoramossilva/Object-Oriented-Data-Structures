@@ -58,6 +58,7 @@ void imprime_cabecalho(){
     cout << endl;
     cout << "******************************************************" << endl;
     cout << "*-*-*-*-*-* Bem-Vindo(a) ao Jogo da Forca -*-*-*-*-*-" << endl;
+    cout << "          # Developed by Bruno P. R. Silva #          " << endl;
     cout << "******************************************************" << endl;
     cout << endl;
 
