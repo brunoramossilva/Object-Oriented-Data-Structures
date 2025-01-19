@@ -1,12 +1,15 @@
 #include <string>
+#include <locale.h>
 
 // Seta a palavra secreta:
-std::string palavra_secreta;
+extern std::string palavra_secreta;
 
-// Função que diz se a letra chutada existe ou não na palavra secreta:
+// Fun??o que diz se a letra chutada existe ou n?o na palavra secreta:
 bool letra_existe(char chute){
 
-    /* Outra forma de executar a interação e verificação:
+    setlocale(LC_ALL, "Portuguese");
+
+    /* Outra forma de executar a intera??o e verifica??o:
     for(int i = 0; i < palavra_secreta.size(); i++ ){
         if(chute == palavra_secreta[i]){
             return true;

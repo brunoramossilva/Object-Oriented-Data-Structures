@@ -1,10 +1,12 @@
 #include <iostream>
-#include <vector>
-#include <string>
 #include <fstream>
+#include <locale.h>
+#include "salva_arquivo.hpp"
 
-// Fun√ß√£o respons√°vel por atualizar a lista de palavras:
+// FunÁ„o respons·vel por atualizar a lista de palavras:
 void salva_arquivo(std::vector<std::string> nova_lista_de_palavras){
+
+    setlocale(LC_ALL, "Portuguese");
 
     std::ofstream arquivo;
     arquivo.open("palavras.txt");
@@ -20,7 +22,7 @@ void salva_arquivo(std::vector<std::string> nova_lista_de_palavras){
         std::cout << "Palavra adicionada com sucesso!" << std::endl;
     }
     else{
-        std::cout << "N√£o foi poss√≠vel acessar o banco de dados.\nContate o administrador do seu sistema." << std::endl ;
+        std::cout << "N„o foi possÌvel acessar o banco de dados.\nContate o administrador do seu sistema." << std::endl ;
         exit(0);
     }
 

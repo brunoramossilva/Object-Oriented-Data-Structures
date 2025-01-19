@@ -2,16 +2,20 @@
 #include <string>
 #include <cctype>
 #include <vector>
-#include "le_arquivo.cpp"
-#include "salva_arquivo.cpp"
+#include <locale.h>
+#include "le_arquivo.hpp"
+#include "salva_arquivo.hpp"
 
-// Fun√ß√£o respons√°vel por adicionar a nova palavra na lista, caso o jogador ven√ßa o jogo:
+// FunÁ„o respons·vel por adicionar a nova palavra na lista, caso o jogador venÁa o jogo:
 void adiciona_palavra(){
+
+    setlocale(LC_ALL, "Portuguese");
+
     std::cout << "Digite a nova palavra: ";
     std::string nova_palavra;
     std::cin >> nova_palavra;
 
-    // Transforma a nova palavra para caixa alta, caso o usu√°rio a tenha digitado utilizando letras min√∫sculas:
+    // Transforma a nova palavra para caixa alta, caso o usu·rio a tenha digitado utilizando letras min˙sculas:
     for (char &c : nova_palavra){
         c = toupper(c);
     }

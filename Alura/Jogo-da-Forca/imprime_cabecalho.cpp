@@ -1,7 +1,10 @@
-#include <iostream>>
+#include <iostream>
+#include <locale.h>
 
-// Função responsável por imprimir o cabeçalho do jogo:
+// Fun??o respons?vel por imprimir o cabe?alho do jogo:
 void imprime_cabecalho(){
+
+    setlocale(LC_ALL, "Portuguese");
 
     std::cout << std::endl;
     std::cout << "******************************************************" << std::endl;

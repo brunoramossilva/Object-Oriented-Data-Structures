@@ -7,17 +7,17 @@
 #include <ctime>
 #include <cstdlib>
 #include <locale.h>
-#include "letra_existe.cpp"
-#include "nao_acertou.cpp"
-#include "nao_enforcou.cpp"
-#include "imprime_cabecalho.cpp"
-#include "verificacao_de_chutes_errados.cpp"
-#include "impressao_da_palavra.cpp"
-#include "recebimento_dos_chutes.cpp"
-#include "le_arquivo.cpp"
-#include "sorteia_palavra.cpp"
-#include "salva_arquivo.cpp"
-#include "adiciona_palavra.cpp"
+#include "letra_existe.hpp"
+#include "nao_acertou.hpp"
+#include "nao_enforcou.hpp"
+#include "imprime_cabecalho.hpp"
+#include "verificacao_de_chutes_errados.hpp"
+#include "impressao_da_palavra.hpp"
+#include "recebimento_dos_chutes.hpp"
+#include "le_arquivo.hpp"
+#include "sorteia_palavra.hpp"
+#include "salva_arquivo.hpp"
+#include "adiciona_palavra.hpp"
 
 using namespace std;
 
@@ -30,7 +30,7 @@ map <char, bool> chutou;
 // Armazena os chutes errados:
 vector <char> chutes_errados;
 
-// Main do código:
+// Main do c?digo:
 int main(){
 
     setlocale(LC_ALL, "Portuguese");
@@ -52,15 +52,15 @@ int main(){
     // Verifica se a pessoa venceu ou perdeu e imprime as mensagens respectivas:
     if (nao_acertou()){
 
-        cout << "Você perdeu! Tente novamente." << endl;
+        cout << "Voc? perdeu! Tente novamente." << endl;
         cout << "A palavra secreta era: " << palavra_secreta << "." << endl;
     }
 
     else {
         
-        cout << "Parabéns, você venceu!" << endl;
+        cout << "Parab?ns, voc? venceu!" << endl;
         cout << "A palavra secreta era: " << palavra_secreta << "." << endl;
-        cout << "Seu prêmio é a oportunidade de adicionar uma nova palavra ao banco de dados.\nDeseja fazer? Responda com 'S' para sim ou 'N' para não: ";
+        cout << "Seu pr?mio ? a oportunidade de adicionar uma nova palavra ao banco de dados.\nDeseja fazer? Responda com 'S' para sim ou 'N' para n?o: ";
 
         char resposta;
         cin >> resposta;
@@ -71,6 +71,6 @@ int main(){
 
     }
 
-    cout << "Obrigado por jogar! Até a próxima.";
+    cout << "Obrigado por jogar! At? a pr?xima.";
 
 }

@@ -2,16 +2,19 @@
 #include <ctype.h>
 #include <map>
 #include <vector>
-#include "letra_existe.cpp"
+#include <locale.h>
+#include "letra_existe.hpp"
 
 // Verifica se a letra foi chutada e a converte para um valor booleano:
-std::map <char, bool> chutou;
+extern std::map <char, bool> chutou;
 
 // Armazena os chutes errados:
-std::vector <char> chutes_errados;
+extern std::vector <char> chutes_errados;
 
-// Fun√ß√£o respons√°vel por receber os chutes do usu√°rio e imprimir mensagens a partir dos chutes:
+// FunÁ„o respons·vel por receber os chutes do usu·rio e imprimir mensagens a partir dos chutes:
 void recebimento_dos_chutes(){
+
+    setlocale(LC_ALL, "Portuguese");
 
     std::cout << "Digite o seu chute: ";
             char chute;
@@ -26,7 +29,7 @@ void recebimento_dos_chutes(){
                 std::cout << "A letra chutada existe na palavra." << std::endl;
             }
             else{
-                std::cout << "A letra chutada n√£o existe na palavra." << std::endl;
+                std::cout << "A letra chutada n„o existe na palavra." << std::endl;
                 chutes_errados.push_back(chute);
             }
             std::cout << std::endl;

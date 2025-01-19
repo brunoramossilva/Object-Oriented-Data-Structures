@@ -1,12 +1,12 @@
 #include <iostream>
-#include <vector>
-#include <string>
 #include <fstream>
+#include <locale.h>
+#include "le_arquivo.hpp"
 
-
-
-// Função responsável por ler o arquivo de texto:
+// Fun??o respons?vel por ler o arquivo de texto:
 std::vector<std::string> le_arquivo(){
+
+    setlocale(LC_ALL, "Portuguese");
 
     std::ifstream arquivo;
     arquivo.open("palavras.txt");
@@ -28,7 +28,7 @@ std::vector<std::string> le_arquivo(){
         return palavras_do_arquivo;
     }
     else{
-        std::cout << "Não foi possível acessar o banco de dados.\nContate o administrador do seu sistema." << std::endl ;
+        std::cout << "N?o foi poss?vel acessar o banco de dados.\nContate o administrador do seu sistema." << std::endl ;
         exit(0);
     }
 
