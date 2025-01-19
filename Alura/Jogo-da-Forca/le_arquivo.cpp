@@ -28,7 +28,7 @@ std::vector<std::string> le_arquivo(){
         return palavras_do_arquivo;
     }
     else{
-        std::cout << "N?o foi poss?vel acessar o banco de dados.\nContate o administrador do seu sistema." << std::endl ;
+        std::cout << "Não foi possível acessar o banco de dados.\nContate o administrador do seu sistema." << std::endl ;
         exit(0);
     }
 

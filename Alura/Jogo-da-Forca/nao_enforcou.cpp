@@ -4,7 +4,7 @@
 // Armazena os chutes errados:
 extern std::vector <char> chutes_errados;
 
-// Funï¿½ï¿½o que retorna se a pessoa jï¿½ excedeu o nï¿½mero mï¿½ximo de tentativas:
+// Função que retorna se a pessoa já excedeu o número máximo de tentativas:
 bool nao_enforcou(){
 
     setlocale(LC_ALL, "Portuguese");

@@ -22,7 +22,7 @@ void salva_arquivo(std::vector<std::string> nova_lista_de_palavras){
         std::cout << "Palavra adicionada com sucesso!" << std::endl;
     }
     else{
-        std::cout << "Não foi possível acessar o banco de dados.\nContate o administrador do seu sistema." << std::endl ;
+        std::cout << "Nçao foi possível acessar o banco de dados.\nContate o administrador do seu sistema." << std::endl ;
         exit(0);
     }
 

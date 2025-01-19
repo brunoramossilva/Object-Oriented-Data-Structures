@@ -52,15 +52,15 @@ int main(){
     // Verifica se a pessoa venceu ou perdeu e imprime as mensagens respectivas:
     if (nao_acertou()){
 
-        cout << "Voc? perdeu! Tente novamente." << endl;
+        cout << "Você perdeu! Tente novamente." << endl;
         cout << "A palavra secreta era: " << palavra_secreta << "." << endl;
     }
 
     else {
         
-        cout << "Parab?ns, voc? venceu!" << endl;
+        cout << "Parabéns, você venceu!" << endl;
         cout << "A palavra secreta era: " << palavra_secreta << "." << endl;
-        cout << "Seu pr?mio ? a oportunidade de adicionar uma nova palavra ao banco de dados.\nDeseja fazer? Responda com 'S' para sim ou 'N' para n?o: ";
+        cout << "Seu prêmio é a oportunidade de adicionar uma nova palavra ao banco de dados.\nDeseja fazer? Responda com 'S' para sim ou 'N' para não: ";
 
         char resposta;
         cin >> resposta;
@@ -71,6 +71,6 @@ int main(){
 
     }
 
-    cout << "Obrigado por jogar! At? a pr?xima.";
+    cout << "Obrigado por jogar! Até a próxima.";
 
 }

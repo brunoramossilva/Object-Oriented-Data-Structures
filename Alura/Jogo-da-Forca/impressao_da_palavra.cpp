@@ -9,7 +9,7 @@ extern std::map <char, bool> chutou;
 // Seta a palavra secreta:
 extern std::string palavra_secreta;
 
-// Fun??o respons?vel por imprimir a palavra secreta conforme os chutes forem sendo dados:
+// Fun??o responsável por imprimir a palavra secreta conforme os chutes forem sendo dados:
 void impressao_da_palavra(){
 
     setlocale(LC_ALL, "Portuguese");
