@@ -16,11 +16,11 @@ int main() {
               << raiz2 <<"  "
               << raiz3 << std::endl;
 
-    std::cout << "Digite um número: ";
+    std::cout << "Digite um nÃºmero: ";
     std::cin >> numero;
 
     raizQuadrada = std::sqrt(numero);
-    std::cout << "A raiz quadrada de " << numero << " é " << raizQuadrada << std::endl;
+    std::cout << "A raiz quadrada de " << numero << " Ã© " << raizQuadrada << std::endl;
     
     return 0;
 }
